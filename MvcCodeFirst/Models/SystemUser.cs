@@ -50,7 +50,7 @@
 
         [Display(Name = "建立時間")]
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime CreateOn { get; set; }
 
         [Display(Name = "更新者")]
@@ -64,7 +64,7 @@
             this.ID = Guid.NewGuid();
             this.IsEnable = false;
             this.CreateBy = new Guid();
-
+            this.CreateOn = DateTime.Now;
             this.SystemRoles = new List<SystemRole>();
         }
 
